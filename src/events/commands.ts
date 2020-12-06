@@ -1,9 +1,9 @@
 import { Message } from 'discord.js';
 
-import commandList, { fallback } from './commandHandlers';
-import config from './config';
-import cooldown from './cooldown';
-import { $l } from './localization';
+import commandList, { fallback } from '../commandHandlers';
+import config from '../config';
+import cooldown from '../utils/cooldown';
+import { $l } from '../localization';
 
 const { COMMAND_PREFIX, defaultEmbed } = config;
 

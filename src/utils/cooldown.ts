@@ -1,5 +1,5 @@
 import { Collection, Snowflake } from 'discord.js';
-import config from './config';
+import config from '../config';
 
 const collection = new Collection<Snowflake, number>();
 

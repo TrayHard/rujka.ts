@@ -1,8 +1,8 @@
 import pino from 'pino';
 import { TextChannel } from 'discord.js';
 
-import { client } from './client';
-import config from './config';
+import { client } from '../client';
+import config from '../config';
 
 const logger = pino({
   prettyPrint: { colorize: true },

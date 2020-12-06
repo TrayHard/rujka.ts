@@ -1,8 +1,10 @@
 import { client } from './client';
 import config from './config';
-import { commands } from './commands';
-import { chatty } from './chatty';
-import { log } from './logger';
+import { commands } from './events/commands';
+import { chatty } from './events/chatty';
+import { log } from './utils/logger';
+import { guildAdd } from './events/guildAdd';
+import { Guild, Message } from 'discord.js';
 
 client.once('ready', () => {
   log.info('Online! ✅');
@@ -17,9 +19,10 @@ client.once('ready', () => {
   }
 });
 
-// bot actions
-client.on('message', (message) => commands(message));
-client.on('message', (message) => chatty(message));
+// bot events
+client.on('message', (message: Message) => commands(message));
+client.on('message', (message: Message) => chatty(message));
+client.on('guildCreate', (gData: Guild) => guildAdd(gData));
 
 // bot authenticates with discord
 client.login(process.env.DISCORD_TOKEN);
