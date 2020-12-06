@@ -1,3 +1,7 @@
+import config from '../../config';
+import { declOfNum } from '../../utils';
+const { COMMAND_PREFIX, COOLDOWN_SECONDS } = config;
+
 export default {
   error: "Ошибка",
   mapPoolNotFound: "Пулла карт с таким именем не найдено!",
@@ -6,6 +10,7 @@ export default {
   banned: "Забанена",
   neutral: "Выбрана как нейтральная",
   inPool: "Доступна для пика",
-  tryHelp: (prefix: string) => `Воспользуйтесь командой ${prefix}help для помощи.`,
-  tooFast: (cooldown: string) => `Too fast! Only **1** command each **${cooldown}** seconds.`,
+  helpCommands: "Помощь по командам",
+  tryHelp: `Воспользуйтесь командой ${COMMAND_PREFIX}help для помощи.`,
+  tooFast: `Слишком быстро! Не более **1** команды за **${COOLDOWN_SECONDS}** ${declOfNum(COOLDOWN_SECONDS, ['секунду', 'секунды', 'секунд'])}.`,
 }

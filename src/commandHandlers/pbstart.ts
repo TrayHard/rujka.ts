@@ -9,3 +9,5 @@ export const command = async (
 }
 
 export const triggers = ['start'];
+export const usage = triggers[0];
+export const description = 'Start pick\\ban phase';

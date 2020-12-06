@@ -1,3 +1,6 @@
+import config from '../../config';
+const { COMMAND_PREFIX, COOLDOWN_SECONDS } = config;
+
 export default {
   error: "Error",
   mapPoolNotFound: "Map pool with this name has not been found!",
@@ -6,5 +9,7 @@ export default {
   banned: "Banned",
   neutral: "Neutral",
   inPool: "Available",
-  tryHelp: (prefix: string) => `Try using the ${prefix}help command.`,
+  helpCommands: "Help commands",
+  tryHelp: `Try using the ${COMMAND_PREFIX}help command.`,
+  tooFast: `Too fast! Only **1** command each **${COOLDOWN_SECONDS}** seconds.`,
 }

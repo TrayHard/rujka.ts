@@ -8,10 +8,10 @@ const langs = {
 
 const langChoice: keyof typeof langs = 'ru';
 
-export default function(phrase: string, ...args: string[]): string {
+export function $l(phrase: string, ...args: string[]): string {
   if (args && args.length) {
-    return langs[langChoice][phrase](...args);
+    return langs[langChoice].default[phrase](...args);
   } else {
-    return langs[langChoice][phrase];
+    return langs[langChoice].default[phrase];
   }
 }

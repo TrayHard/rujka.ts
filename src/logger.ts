@@ -22,9 +22,9 @@ const discordLog = async (type: string, message: string, details?: string) => {
     }
 
     if (details) {
-      await channel.send(`${type.toUpperCase()}: ${message} - ${details}`);
+      await channel.send(`> **[ ${type.toUpperCase()} ]**: ${message} - ${details}`);
     } else {
-      await channel.send(`${type.toUpperCase()}: ${message}`);
+      await channel.send(`> **[ ${type.toUpperCase()} ]**: ${message}`);
     }
   }
 };
