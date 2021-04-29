@@ -17,7 +17,7 @@ class Storage {
         })
         break;
       case 'map':
-        db.collection('maps').add({
+        db.collection('maps').doc(options.id).set({
           'id': options.id,
           'bspName': options.bspName,
           'fullName': options.fullName,
@@ -51,7 +51,7 @@ class Storage {
         return db.collection('maps').doc(options.cupID).get();
         break;
       case 'map':
-        return db.collection('maps').doc(options.mapID).get();
+        return db.collection('maps').doc(options).get();
         break;
       case 'mappool':
         return db.collection('mappools').doc(options.mapPoolID).get();
